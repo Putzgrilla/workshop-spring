@@ -1,4 +1,4 @@
-package com.Arthur.Projetospring.UserServices;
+package com.Arthur.Projetospring.Services;
 
 import java.util.List;
 import java.util.Optional;
