@@ -1,0 +1,27 @@
+package com.Arthur.Projetospring.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Arthur.Projetospring.Entities.Category;
+import com.Arthur.Projetospring.Repositories.CategoryRepository;
+
+@Service
+public class CategoryService {
+	@Autowired
+private CategoryRepository repository; 
+	public List<Category> findAll(){
+		
+		return repository.findAll();
+	}
+	public Category FindById(long id) {
+		Optional<Category> obj = repository.findById(id);
+		return obj.get();
+		
+		
+	}
+
+}
