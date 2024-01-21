@@ -2,7 +2,9 @@ package com.Arthur.Projetospring.Entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import com.Arthur.Projetospring.Entities.Enum.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -31,6 +33,8 @@ public class Order implements Serializable {
 	@JoinColumn(name = "Client_id")
 	private User client;
 
+	private  Set<OrderItem> items = new HashSet<>();
+	
 	public Order() {
 
 	}
