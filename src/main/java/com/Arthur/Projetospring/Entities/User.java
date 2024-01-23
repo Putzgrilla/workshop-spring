@@ -22,10 +22,10 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String name;
 	private String email;
-	private String telefone;
-	private String senha;
+	private String phone;
+	private String password;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "client")
@@ -35,13 +35,13 @@ public class User implements Serializable {
 
 	}
 
-	public User(Long id, String nome, String email, String telefone, String senha) {
+	public User(Long id, String Name, String email, String phone, String password) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = Name;
 		this.email = email;
-		this.telefone = telefone;
-		this.senha = senha;
+		this.phone = phone;
+		this.password = password;
 	}
 
 	public long getId() {
@@ -52,12 +52,12 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String Name) {
+		this.name = Name;
 	}
 
 	public String getEmail() {
@@ -68,20 +68,20 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getphone() {
+		return phone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setphone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getpassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setpassword(String password) {
+		this.password = password;
 	}
 
 	@Override

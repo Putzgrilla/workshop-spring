@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 import com.Arthur.Projetospring.Entities.Category;
 import com.Arthur.Projetospring.Entities.Order;
 import com.Arthur.Projetospring.Entities.OrderItem;
+import com.Arthur.Projetospring.Entities.Paymente;
 import com.Arthur.Projetospring.Entities.Product;
 import com.Arthur.Projetospring.Entities.User;
 import com.Arthur.Projetospring.Entities.Enum.OrderStatus;
@@ -68,6 +69,8 @@ public class TestConfig implements CommandLineRunner {
 		OrderItem oi3 = new OrderItem(o2, p3, 2, p3.getPrice());
 		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
 		orderItemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
-
+		Paymente pay1 = new Paymente(null,Instant.parse("2019-06-20T19:53:07Z"),o3);
+		o3.setPaymente(pay1);
+		orderRepository.save(o3);
 	}
 }
