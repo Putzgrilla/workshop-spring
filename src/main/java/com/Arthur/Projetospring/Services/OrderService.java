@@ -12,16 +12,17 @@ import com.Arthur.Projetospring.Repositories.OrderRepository;
 @Service
 public class OrderService {
 	@Autowired
-private OrderRepository repository; 
-	public List<Order> findAll(){
-		
+	private OrderRepository repository;
+
+	public List<Order> findAll() {
+
 		return repository.findAll();
 	}
+
 	public Order FindById(long id) {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();
-		
-		
+
 	}
 
 }
